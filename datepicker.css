@@ -1,0 +1,94 @@
+/* Reset some default styles */
+body, h1, div {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color and font family for the page */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Style the header */
+h1 {
+  margin: 20px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Style the date picker container */
+#datepicker1, #datepicker2 {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 20px auto;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the calendar header */
+.calendar-header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style the navigation buttons */
+.nav-button {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 5px;
+}
+
+/* Style the month and year label */
+.calendar-header span:not(.nav-button) {
+  font-size: 20px;
+}
+
+/* Style the days of the week */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 0;
+}
+
+.day-abbreviation {
+  flex: 1;
+  text-align: center;
+}
+
+/* Style the individual day cells */
+.week-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.day-cell {
+  flex: 1;
+  text-align: center;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+/* Style selected day */
+.day-cell.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Style days from other months */
+.day-cell.other-month {
+  color: #ccc;
+}
+
+/* Hover effect */
+.day-cell:hover:not(.other-month) {
+  background-color: #f0f0f0;
+}
