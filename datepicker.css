@@ -1,0 +1,44 @@
+/* The file is meant to apply styling to the calendars and make them look nice.
+The corresponding link tag that requires the css file has already been added in the datepicker.html file.
+Reference line 7 in datepicker.html*/
+
+/* For the calendar */
+.calendar {
+
+}
+
+/* For the header */
+.header {
+
+}
+
+/* For the buttons to go left and right on the calender */
+.prev-button,
+.next-button {
+
+}
+
+/* Month and year display */
+.month-year {
+
+}
+
+/* For day names */
+.day-names {
+
+}
+
+/* For days */
+.days {
+
+}
+
+/* Individual days */
+.day {
+
+}
+
+/* Dimmed (selected) days */
+.day.dimmed {
+
+}
