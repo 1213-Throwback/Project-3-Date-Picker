@@ -13,7 +13,7 @@ Reference line 7 in datepicker.html*/
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #04432c;
+    background-color: #04432c; /* UNC Charlotte Green */
     padding: 5px;
 }
 
@@ -32,7 +32,7 @@ Reference line 7 in datepicker.html*/
 .day-names {
     display: flex;
     justify-content: space-around;
-    background-color: #d0d4d1;
+    background-color: #d0d4d1;  /* UNC Charlotte White */
     padding: 5px;
 }
 
