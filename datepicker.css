@@ -19,12 +19,14 @@ Reference line 7 in datepicker.html*/
 
 .month-year {
     font-size: 20px;
+    color: #d0d4d1;  /* UNC Charlotte White */;
 }
 
 .prev-button,
 .next-button {
     font-size: 20px;
     cursor: pointer;
+    color: #d0d4d1;  /* UNC Charlotte White */;
     border: none;
     background: none;
 }
