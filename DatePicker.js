@@ -69,12 +69,16 @@ function DatePicker(id, fixedDate) {
         // Still need to add logic to generate days of the month here-----------------------
 
 
-
-
+        const monthsOfYear = ["January", "February", "March", "April", "May", "June", "July",
+            "August", "September", "October", "November", "December"];
         //----------------------------------------------------------------------------------
 
         // Add days of month to container
         container.appendChild(daysContainer);
+
+        // Need to add highlight day of the month selected
+        const day = fixedDate;
+
     };
 }
 
