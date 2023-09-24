@@ -2,43 +2,55 @@
 The corresponding link tag that requires the css file has already been added in the datepicker.html file.
 Reference line 7 in datepicker.html*/
 
-/* For the calendar */
+/* Add CSS styles here */
 .calendar {
-
+    border: 1px solid black;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
-/* For the header */
 .header {
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #04432c;
+    padding: 5px;
 }
 
-/* For the buttons to go left and right on the calender */
+.month-year {
+    font-size: 20px;
+}
+
 .prev-button,
 .next-button {
-
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
 }
 
-/* Month and year display */
-.month-year {
-
-}
-
-/* For day names */
 .day-names {
-
+    display: flex;
+    justify-content: space-around;
+    background-color: #d0d4d1;
+    padding: 5px;
 }
 
-/* For days */
-.days {
-
-}
-
-/* Individual days */
 .day {
-
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
 }
 
-/* Dimmed (selected) days */
 .day.dimmed {
-
+    color: #ccc;
 }
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
