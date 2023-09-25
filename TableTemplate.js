@@ -38,7 +38,8 @@ class TableTemplate {
             if (columnIndex === -1) {
                 for (let j = 0; j < row.cells.length; j++) {
                     let cell = row.cells[j];
-                    cell.textContent = templateProcessor.fillIn(dictionary);
+                    templateProcessor.template = cell.textContent;
+                    cell.innerHTML = templateProcessor.fillIn(dictionary);
                 }
             } else {
                 let cell = row.cells[columnIndex];

@@ -1,6 +1,7 @@
 function TemplateProcessor() {
     this.template = '';
     this.fillIn = function(dictionary) {
+
         let returnString = this.template;
 
         while (returnString.indexOf("{{") !== -1) {
