@@ -82,7 +82,7 @@ function DatePicker(id, fixedDate) {
                 const dayElement = createElement('div', 'day', i);
 
                 // This should initialize the selected date from the function call
-                // NOT WORKING!!!!
+                // NOT WORKING!!!!*********************************************************************
                 if (selectedDay === i) {
                     dayElement.classList.add('selected');
                 }
@@ -129,7 +129,7 @@ function DatePicker(id, fixedDate) {
         });
 
         // Initial render of year and month when website starts
-        generateDays(fixedDate.getFullYear(), fixedDate.getMonth());
+        generateDays(fixedDate.getFullYear(), fixedDate.getMonth(), fixedDate);
 
     };
 }
