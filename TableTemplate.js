@@ -11,7 +11,7 @@ class TableTemplate {
         });
     }
 
-    static fillIn(id, dictionary, columnName ) {
+    static fillIn(id, dictionary, columnName) {
 
         //Variable Declaration and Initialization
         const table = document.getElementById(id);
@@ -20,6 +20,8 @@ class TableTemplate {
 
         for (let i = 0; i < headerRow.cells.length; i++) {
             let cell = headerRow.cells[i];
+
+
             cell.textContent = this.replaceProperty(cell.textContent, dictionary);
 
             if (cell.textContent === columnName) {
@@ -43,6 +45,7 @@ class TableTemplate {
                 }
             } else {
                 let cell = row.cells[columnIndex];
+                templateProcessor.template = cell.textContent;
                 cell.textContent = templateProcessor.fillIn(dictionary);
             }
         }
