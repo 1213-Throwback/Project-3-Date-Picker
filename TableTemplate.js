@@ -1,3 +1,4 @@
+'use strict'
 //Class Declaration
 class TableTemplate {
 
@@ -52,46 +53,3 @@ class TableTemplate {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

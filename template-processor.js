@@ -1,14 +1,18 @@
+'use strict'
 function TemplateProcessor() {
     this.template = '';
+
     this.fillIn = function(dictionary) {
 
         let returnString = this.template;
 
+        // Continue still end of string and find indexes
         while (returnString.indexOf("{{") !== -1) {
             let location = returnString.indexOf("{{");
             let endLocation = returnString.indexOf("}}");
             let key = returnString.substring(location + 2, endLocation);
 
+            // If else to concatenate string
             if (typeof dictionary[key] !== "undefined") {
                 let first = returnString.substring(0, location);
                 let second = dictionary[key];

@@ -1,5 +1,7 @@
+'use strict';
 /*
-This file implements a JavaScript class named DatePicker that can be used as in the following example:
+This file implements a JavaScript class named DatePicker that can be used as in the following
+example:
 
     var datePicker = new DatePicker("div1", function (id, fixedDate) {
         console.log("DatePicker with id", id,
@@ -12,7 +14,7 @@ function DatePicker(id, fixedDate) {
     this.id = id; // Store the provided id
     this.fixedDate = fixedDate; // Store the provided fixedDate
     // Render method to display the calendar
-    this.render = function (fixedDate) {
+    this.render = function () {
         // Utility function to create elements with class
         // Including text is optional
         function createElement(tag, className, text) {
@@ -73,8 +75,8 @@ function DatePicker(id, fixedDate) {
         // Function to generate days of the month
         function generateDays(year, month, selectedDay) {
             daysContainer.innerHTML = ''; // Clear previous content
-
-            // The getDate() method of Date instances returns the day of the month for this date according to local time.
+            // The getDate() method of Date instances returns the day of the month for this
+            // date according to local time.
             const daysInMonth = new Date(year, month + 1, 0).getDate();
 
             // Create days to populate calendar
@@ -82,7 +84,8 @@ function DatePicker(id, fixedDate) {
                 const dayElement = createElement('div', 'day', i);
 
                 // This should initialize the selected date from the function call
-                // NOT WORKING!!!!*********************************************************************
+                // NOT WORKING!!!!*********************************
+                // ************************************
                 if (selectedDay === i) {
                     dayElement.classList.add('selected');
                 }
@@ -90,7 +93,7 @@ function DatePicker(id, fixedDate) {
                 // If user clicks on a day to highlight that day and remove the last highlighted day
                 dayElement.addEventListener('click', function () {
                     // Remove previously selected day
-                    const selectedDay = document.querySelector('.day.selected');
+                    //const selectedDay = document.querySelector('.day.selected');
                     if (selectedDay) {
                         selectedDay.classList.remove('selected');
                     }
