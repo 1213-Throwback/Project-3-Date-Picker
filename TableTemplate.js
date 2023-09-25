@@ -1,5 +1,5 @@
-'use strict'
 //Class Declaration
+"use strict";
 class TableTemplate {
 
     static replaceProperty(text, dictionary) {
@@ -20,7 +20,7 @@ class TableTemplate {
         let columnIndex = -1;
 
         for (let i = 0; i < headerRow.cells.length; i++) {
-            let cell = headerRow.cells[i];
+            const cell = headerRow.cells[i];
 
 
             cell.textContent = this.replaceProperty(cell.textContent, dictionary);
@@ -36,16 +36,16 @@ class TableTemplate {
         table.style.visibility = "visible";
 
         for (let i = 1; i < table.rows.length; i++) {
-            let row = table.rows[i];
+            const row = table.rows[i];
 
             if (columnIndex === -1) {
                 for (let j = 0; j < row.cells.length; j++) {
-                    let cell = row.cells[j];
+                    const cell = row.cells[j];
                     templateProcessor.template = cell.textContent;
                     cell.innerHTML = templateProcessor.fillIn(dictionary);
                 }
             } else {
-                let cell = row.cells[columnIndex];
+                const cell = row.cells[columnIndex];
                 templateProcessor.template = cell.textContent;
                 cell.textContent = templateProcessor.fillIn(dictionary);
             }
