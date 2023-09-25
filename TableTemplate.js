@@ -1,5 +1,16 @@
 //Class Declaration
 class TableTemplate {
+
+    static replaceProperty(text, dictionary) {
+        return text.replace(/{{(.*?)}}/g, (match, spot) => {
+            if (dictionary[spot]) {
+                return dictionary[spot];
+            } else {
+                return match;
+            }
+        });
+    }
+
     static fillIn(id, dictionary, columnName ){
 
         //Variable Declaration and Initialization
@@ -18,7 +29,7 @@ class TableTemplate {
         }
 
         for(let i = 1; i < table.rows.length; i++){
-            if(//Column index is not specified){
+            if(columnName == null ){
                 //Process entire table
             }
             else{//columnName is not matched,
@@ -27,15 +38,6 @@ class TableTemplate {
         }
 
 
-    static replaceProperty(text, dictionary) {
-        return text.replace(/{{(.*?)}}/g, (match, spot) => {
-            if (dictionary[spot]) {
-                return dictionary[spot];
-            } else {
-                return match;
-            }
-        });
-    }
 
 
 
