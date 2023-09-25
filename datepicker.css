@@ -47,8 +47,13 @@ Reference line 7 in datepicker.html*/
     border: 1px solid #ccc;
 }
 
+.day.selected {
+    background-color: gold;
+    color: #04432c;
+}
+
 .day.dimmed {
-    color: #ccc;
+    opacity: 0.5;
 }
 
 .days {

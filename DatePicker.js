@@ -66,18 +66,70 @@ function DatePicker(id, fixedDate) {
         // Create element for days of month
         const daysContainer = createElement('div', 'days');
 
-        // Still need to add logic to generate days of the month here-----------------------
-
-
+        // Sting Array holding all 12 month of the year
         const monthsOfYear = ["January", "February", "March", "April", "May", "June", "July",
             "August", "September", "October", "November", "December"];
-        //----------------------------------------------------------------------------------
+
+        // Function to generate days of the month
+        function generateDays(year, month, selectedDay) {
+            daysContainer.innerHTML = ''; // Clear previous content
+
+            // The getDate() method of Date instances returns the day of the month for this date according to local time.
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            // Create days to populate calendar
+            for (let i = 1; i <= daysInMonth; i++) {
+                const dayElement = createElement('div', 'day', i);
+
+                // This should initialize the selected date from the function call
+                // NOT WORKING!!!!
+                if (selectedDay === i) {
+                    dayElement.classList.add('selected');
+                }
+
+                // If user clicks on a day to highlight that day and remove the last highlighted day
+                dayElement.addEventListener('click', function () {
+                    // Remove previously selected day
+                    const selectedDay = document.querySelector('.day.selected');
+                    if (selectedDay) {
+                        selectedDay.classList.remove('selected');
+                    }
+
+                    // Add selected day
+                    this.classList.add('selected');
+
+                    // Log for console (maybe needed for testing?)
+                    console.log(`Selected date: ${monthsOfYear[month]} ${i}, ${year}`);
+                });
+                // Add element to parent
+                daysContainer.appendChild(dayElement);
+            }
+        }
 
         // Add days of month to container
         container.appendChild(daysContainer);
 
-        // Need to add highlight day of the month selected
-        const day = fixedDate;
+        // Set initial month label and render days
+        monthLabel.innerText = monthsOfYear[fixedDate.getMonth()] + ' ' + fixedDate.getFullYear();
+        generateDays(fixedDate.getFullYear(), fixedDate.getMonth(), fixedDate.getDate());
+
+        // Add event listeners for rotation buttons
+        // Left arrow function
+        prevButton.addEventListener('click', function () {
+            fixedDate.setMonth(fixedDate.getMonth() - 1);
+            generateDays(fixedDate.getFullYear(), fixedDate.getMonth());
+            monthLabel.innerText = monthsOfYear[fixedDate.getMonth()] + ' ' + fixedDate.getFullYear();
+        });
+
+        // Right arrow function
+        nextButton.addEventListener('click', function () {
+            fixedDate.setMonth(fixedDate.getMonth() + 1);
+            generateDays(fixedDate.getFullYear(), fixedDate.getMonth());
+            monthLabel.innerText = monthsOfYear[fixedDate.getMonth()] + ' ' + fixedDate.getFullYear();
+        });
+
+        // Initial render of year and month when website starts
+        generateDays(fixedDate.getFullYear(), fixedDate.getMonth());
 
     };
 }
