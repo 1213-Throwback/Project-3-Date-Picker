@@ -74,15 +74,19 @@ function DatePicker(id, fixedDate) {
         function generateDays(year, month, selectedDay) {
             daysContainer.innerHTML = ''; // Clear previous content
 
-            // The getDate() method of Date instances returns the day of the month for this date according to local time.
+            // The getDate() method of Date instances returns the day of the month for this
+            // date according to local time.
             const daysInMonth = new Date(year, month + 1, 0).getDate();
 
             // Create days to populate calendar
             for (let i = 1; i <= daysInMonth; i++) {
                 const dayElement = createElement('div', 'day', i);
 
-                // This should initialize the selected date from the function call
-                // NOT WORKING!!!!*********************************************************************
+                // This should initialize the selected date from the
+                // function call
+
+                // NOT WORKING!!!!**********************************************
+                // ***********************
                 if (selectedDay === i) {
                     dayElement.classList.add('selected');
                 }
